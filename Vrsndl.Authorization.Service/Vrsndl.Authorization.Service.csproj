@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <ImplicitUsings>disable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+	  <SignAssembly>True</SignAssembly>
+	  <AssemblyOriginatorKeyFile>..\Vrsndl.Authorization.snk</AssemblyOriginatorKeyFile>
+	  <IncludeSymbols>False</IncludeSymbols>
+	  <Title>Vrsndl Authorization Service</Title>
+	  <Authors>Vrsndl</Authors>
+	  <Copyright>© 2023 Vrsndl</Copyright>
+	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	  <PackageProjectUrl>https://github.com/stefan9461/Vrsndl.Authorization</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/stefan9461/Vrsndl.Authorization</RepositoryUrl>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageTags>Vrsndl JWT authorization</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>nopne</DebugType>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Docs\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.35.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.35.0" />
+  </ItemGroup>
+
+</Project>
